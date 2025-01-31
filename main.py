@@ -4,11 +4,11 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get('/')
+@app.get("/")
 async def root():
-    lagos_time = datetime.datetime.now(pytz.timezone('Africa/Lagos'))
+    utc_time = datetime.datetime.now(pytz.UTC).isoformat()
     return {
-            "email": "your-email@example.com",
-            "current_datetime": f"{lagos_time}",
-            "github_url": "https://github.com/omofz/stage0-hng"
-        }
+        "email": "abasiomofonudoh@gmail.com",
+        "current_datetime": utc_time,
+        "github_url": "https://github.com/omofz/stage0-hng"
+    }
