@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    utc_time = datetime.datetime.now(pytz.UTC).isoformat(timespec="seconds") + "Z"
+    utc_time = datetime.utcnow().isoformat(timespec="seconds") + "Z"
     return {
         "email": "abasiomofonudoh@gmail.com",
         "current_datetime": utc_time,
